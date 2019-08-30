@@ -23,15 +23,18 @@ do {
     numbers.push(Number(input));
   }
 } while (input !== null);
-
-function arraySum(total) {
-  for (var i = 0; i < numbers.length; i++) {
-    total += numbers[i];
-  }
-  return total;
+for (let number of numbers) {
+  total += number;
 }
+alert(`Общая сумма чисел равна ${total}`);
+// function arraySum(total) {
+//   for (var i = 0; i < numbers.length; i++) {
+//     total += numbers[i];
+//   }
+//   return total;
+// }
 
-alert(`Общая сумма чисел равна ${arraySum(total)}`);
+// alert(`Общая сумма чисел равна ${arraySum(total)}`);
 
 // let user = function(numbers) {
 //   for (const i = 0; i < numbers.length; i++) {
