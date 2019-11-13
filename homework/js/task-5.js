@@ -1,26 +1,15 @@
 "use strict";
-const formatString = function(string) {
-  return string.length <= 40 ? string : `${string.slice(0, 39)}...`;
+const checkForSpam = function(string) {
+  return (
+    string.toLowerCase().includes("sale") ||
+    string.toLowerCase().includes("spam")
+  );
 };
 
-// for (let value of formatString) {
+console.log(checkForSpam("Latest technology news"));
 
-// }
+console.log(checkForSpam("JavaScript weekly newsletter"));
 
-// console.log(formatString);
+console.log(checkForSpam("Get best sale offers now!"));
 
-console.log(formatString("Curabitur ligula sapien, tincidunt non."));
-// вернется оригинальная строка
-
-console.log(formatString("Vestibulum facilisis, purus nec pulvinar iaculis."));
-// вернется форматированная строка
-
-console.log(formatString("Curabitur ligula sapien."));
-// вернется оригинальная строка
-
-console.log(
-  formatString(
-    "Nunc sed turpis. Curabitur a felis in nunc fringilla tristique."
-  )
-);
-// вернется форматированная строка
+console.log(checkForSpam("[SPAM] How to earn fast money?"));

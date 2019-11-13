@@ -1,15 +1,18 @@
 "use strict";
-const checkForSpam = function(string) {
-  return (
-    string.toLowerCase().includes("sale") ||
-    string.toLowerCase().includes("spam")
-  );
-};
+let input;
+const numbers = [];
+let total = 0;
 
-console.log(checkForSpam("Latest technology news"));
+do {
+  input = prompt("Введите число");
 
-console.log(checkForSpam("JavaScript weekly newsletter"));
-
-console.log(checkForSpam("Get best sale offers now!"));
-
-console.log(checkForSpam("[SPAM] How to earn fast money?"));
+  if (input !== null) {
+    numbers.push(Number(input));
+  }
+} while (input !== null);
+if (numbers.length > 0) {
+  for (const number of numbers) {
+    total += Number(number);
+  }
+  console.log(`Общая сумма чисел равна ${total}`);
+}

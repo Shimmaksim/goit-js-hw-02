@@ -1,10 +1,27 @@
 "use strict";
-const logItems = function(array) {
-  for (let i = 0; i < array.length; i++) {
-    console.log(`${i + 1} - ${array[i]}`);
+const calculateEngravingPrice = function(message, pricePerWord) {
+  let total = 0;
+  const words = message.split(" ");
+  for (const word of words) {
+    total += pricePerWord;
   }
+  return total;
 };
 
-logItems(["Mango", "Poly", "Ajax", "Lux", "Jay", "Kong"]);
+console.log(
+  calculateEngravingPrice(
+    "Proin sociis natoque et magnis parturient montes mus",
+    10
+  )
+);
 
-logItems([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]);
+console.log(
+  calculateEngravingPrice(
+    "Proin sociis natoque et magnis parturient montes mus",
+    20
+  )
+);
+
+console.log(calculateEngravingPrice("Donec orci lectus aliquam est", 40));
+
+console.log(calculateEngravingPrice("Donec orci lectus aliquam est", 20));

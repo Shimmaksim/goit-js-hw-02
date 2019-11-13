@@ -1,15 +1,10 @@
 "use strict";
-const users = ["Mango", "Poly", "Ajax", "Chelsey"];
-users.shift();
-console.log(users);
-users.pop();
-console.log(users);
-users.unshift("Lux");
-console.log(users);
-users.push("Jay", "Kiwi");
-console.log(users);
-const userToDelete = users.splice(2, 1);
-console.log(users);
-const userToInsert = "Kong";
-users.splice(2, 0, userToInsert);
-console.log(users);
+const logItems = function(array) {
+  for (let i = 0; i < array.length; i++) {
+    console.log(`${i + 1} - ${array[i]}`);
+  }
+};
+
+logItems(["Mango", "Poly", "Ajax", "Lux", "Jay", "Kong"]);
+
+logItems([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]);

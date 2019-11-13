@@ -1,20 +1,20 @@
 "use strict";
-const findLongestWord = function(string) {
-  const words = string.split(" ");
-  let longest = words[0];
-  for (const word of words) {
-    if (word.length > longest.length) {
-      longest = word;
-    }
-  }
-  return longest;
+const formatString = function(string) {
+  return string.length <= 40 ? string : `${string.slice(0, 39)}...`;
 };
 
-console.log(findLongestWord("The quick brown fox jumped over the lazy dog"));
+console.log(formatString("Curabitur ligula sapien, tincidunt non."));
+// вернется оригинальная строка
 
-console.log(findLongestWord("Google do a roll"));
+console.log(formatString("Vestibulum facilisis, purus nec pulvinar iaculis."));
+// вернется форматированная строка
 
-console.log(findLongestWord("May the force be with you"));
-// const rebok = "Вызовы функции для проверки работоспособности твоей реализации.";
-// const string = rebok.split(" ");
-// console.log(string);
+console.log(formatString("Curabitur ligula sapien."));
+// вернется оригинальная строка
+
+console.log(
+  formatString(
+    "Nunc sed turpis. Curabitur a felis in nunc fringilla tristique."
+  )
+);
+// вернется форматированная строка
